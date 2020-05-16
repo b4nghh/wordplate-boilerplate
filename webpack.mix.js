@@ -1,22 +1,31 @@
 const mix = require('laravel-mix');
 
 require('dotenv').config();
-
-/*
- |--------------------------------------------------------------------------
- | Mix Asset Management
- |--------------------------------------------------------------------------
- |
- | Mix provides a clean, fluent API for defining some Webpack build steps
- | for your WordPlate application. By default, we are compiling the Sass
- | file for your application, as well as bundling up your JavaScript files.
- |
- */
+require('laravel-mix-purgecss');
+require('laravel-mix-copy-watched');
 
 const theme = process.env.WP_THEME;
 
 mix.setResourceRoot('../');
 mix.setPublicPath(`public/themes/${theme}/assets`);
+mix.browserSync({
+  proxy: process.env.BROWSER_SYNC_HOST,
+});
 
-mix.js('resources/scripts/app.js', 'scripts');
-mix.sass('resources/styles/app.scss', 'styles');
+mix.js('resources/assets/scripts/app.js', 'scripts')
+  .sass('resources/assets/styles/app.scss', 'styles')
+  .purgeCss({
+    whitelist: require('purgecss-with-wordpress').whitelist,
+    whitelistPatterns: require('purgecss-with-wordpress').whitelistPatterns,
+   });
+
+mix.copyWatched('resources/assets/images/**', 'dist/images')
+  .copyWatched('resources/assets/fonts/**', 'dist/fonts');
+
+mix.autoload({
+  jquery: ['$', 'window.jQuery'],
+});
+
+if (mix.inProduction()) {
+  mix.version();
+}
