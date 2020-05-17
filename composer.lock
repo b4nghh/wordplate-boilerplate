@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4c48f997c3a3b97cc13f1e47031653c6",
+    "content-hash": "74d55a7a3020fe1d844b55c7da02db03",
     "packages": [
         {
             "name": "brain/hierarchy",
@@ -938,6 +938,51 @@
                 "type"
             ],
             "time": "2020-03-21T18:07:53+00:00"
+        },
+        {
+            "name": "pixelstudio/wp-sync-db",
+            "version": "1.7.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/hrsetyono/wp-sync-db.git",
+                "reference": "ae7fc9700b13012402701ebc9e4d55e0be9cc3fb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/hrsetyono/wp-sync-db/zipball/ae7fc9700b13012402701ebc9e4d55e0be9cc3fb",
+                "reference": "ae7fc9700b13012402701ebc9e4d55e0be9cc3fb",
+                "shasum": ""
+            },
+            "require": {
+                "composer/installers": "~1.0",
+                "php": ">=7.0.0"
+            },
+            "type": "wordpress-plugin",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Sean Lang",
+                    "email": "slang800@gmail.com",
+                    "homepage": "https://slang.cx/"
+                },
+                {
+                    "name": "Pixel Studio",
+                    "email": "info@pixelstudio.id",
+                    "homepage": "https://pixelstudio.id"
+                }
+            ],
+            "description": "WordPress plugin to sync database between different installs",
+            "homepage": "https://github.com/hrsetyono/wp-sync-db/",
+            "keywords": [
+                "database",
+                "plugin",
+                "sync",
+                "wordpress"
+            ],
+            "time": "2020-05-13T04:40:43+00:00"
         },
         {
             "name": "psr/container",
