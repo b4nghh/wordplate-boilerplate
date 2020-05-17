@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "585eb87104acf35834e37d6e3e50c65d",
+    "content-hash": "808e93b3b09a77d24d47066a5db7bf2d",
     "packages": [
         {
             "name": "advanced-custom-fields/advanced-custom-fields-pro",
@@ -2203,6 +2203,66 @@
                 "php"
             ],
             "time": "2020-03-13T01:23:26+00:00"
+        },
+        {
+            "name": "wordplate/acf",
+            "version": "8.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/wordplate/acf.git",
+                "reference": "d4997965e81de4f336200686344f13f5fe744e38"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/wordplate/acf/zipball/d4997965e81de4f336200686344f13f5fe744e38",
+                "reference": "d4997965e81de4f336200686344f13f5fe744e38",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.2"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^8.0",
+                "squizlabs/php_codesniffer": "^3.5"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "8.3-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "WordPlate\\Acf\\": "src/"
+                },
+                "files": [
+                    "src/helpers.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Vincent Klaiber",
+                    "email": "hello@doubledip.se"
+                },
+                {
+                    "name": "Chris Andersson",
+                    "email": "hello@puredazzle.se"
+                }
+            ],
+            "description": "Register advanced custom fields with object oriented PHP",
+            "keywords": [
+                "acf",
+                "advanced",
+                "custom",
+                "fields",
+                "wordplate",
+                "wordpress"
+            ],
+            "time": "2020-03-23T19:51:24+00:00"
         },
         {
             "name": "wordplate/framework",

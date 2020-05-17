@@ -16,6 +16,7 @@
     "roots/soil": "^3.9",
     "tightenco/collect": "^7.10",
     "vlucas/phpdotenv": "^4.0",
+    "wordplate/acf": "^8.2",
     "wordplate/framework": "^8.1"
   },
   "config": {

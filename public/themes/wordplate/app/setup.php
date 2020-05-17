@@ -3,6 +3,9 @@
 // Register plugin helpers.
 require template_path('app/library/plate.php');
 
+// Include ACF files
+require_once template_path('app/acf-wrapper.php');
+
 // Enqueue and register scripts the right way.
 add_action('wp_enqueue_scripts', function () {
     wp_deregister_script('jquery');
