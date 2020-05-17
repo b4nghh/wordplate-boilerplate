@@ -1,5 +1,8 @@
 <?php
 
+// Register plugin helpers.
+require template_path('app/library/plate.php');
+
 // Enqueue and register scripts the right way.
 add_action('wp_enqueue_scripts', function () {
     wp_deregister_script('jquery');
@@ -86,4 +89,8 @@ add_action('after_setup_theme', function () {
             'color' => '#525ddc',
         ]
     ]);
+
+    // Disable the admin toolbar.
+    // show_admin_bar(false);
+
 }, 20);
