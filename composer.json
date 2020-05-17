@@ -1,54 +1,71 @@
 {
-    "name": "wordplate/wordplate",
-    "description": "A modern WordPress stack built with Composer",
-    "keywords": [
-        "wordplate",
-        "wordpress",
-        "boilerplate"
-    ],
-    "license": "MIT",
-    "require": {
-        "php": "^7.2",
-        "fiskhandlarn/blade": "^0.5.0",
-        "laravel/helpers": "^1.2",
-        "pixelstudio/wp-sync-db": "^1.7",
-        "roots/soil": "^3.9",
-        "tightenco/collect": "^7.10",
-        "vlucas/phpdotenv": "^4.0",
-        "wordplate/framework": "^8.1"
+  "name": "wordplate/wordplate",
+  "description": "A modern WordPress stack built with Composer",
+  "keywords": [
+    "wordplate",
+    "wordpress",
+    "boilerplate"
+  ],
+  "license": "MIT",
+  "require": {
+    "php": "^7.2",
+    "advanced-custom-fields/advanced-custom-fields-pro": "^5.0.0",
+    "fiskhandlarn/blade": "^0.5.0",
+    "laravel/helpers": "^1.2",
+    "pixelstudio/wp-sync-db": "^1.7",
+    "roots/soil": "^3.9",
+    "tightenco/collect": "^7.10",
+    "vlucas/phpdotenv": "^4.0",
+    "wordplate/framework": "^8.1"
+  },
+  "config": {
+    "optimize-autoloader": true,
+    "preferred-install": "dist",
+    "sort-packages": true
+  },
+  "extra": {
+    "installer-paths": {
+      "public/mu-plugins/{$name}": [
+        "type:wordpress-muplugin"
+      ],
+      "public/plugins/{$name}": [
+        "type:wordpress-plugin"
+      ],
+      "public/themes/{$name}": [
+        "type:wordpress-theme"
+      ]
     },
-    "config": {
-        "optimize-autoloader": true,
-        "preferred-install": "dist",
-        "sort-packages": true
+    "wordpress-install-dir": "public/wordpress"
+  },
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://wpackagist.org",
+      "only": [
+        "wpackagist-plugin/*",
+        "wpackagist-theme/*"
+      ]
     },
-    "extra": {
-        "installer-paths": {
-            "public/mu-plugins/{$name}": [
-                "type:wordpress-muplugin"
-            ],
-            "public/plugins/{$name}": [
-                "type:wordpress-plugin"
-            ],
-            "public/themes/{$name}": [
-                "type:wordpress-theme"
-            ]
+    {
+      "type": "package",
+      "package": {
+        "name": "advanced-custom-fields/advanced-custom-fields-pro",
+        "version": "5.8.11",
+        "type": "wordpress-plugin",
+        "dist": {
+          "type": "zip",
+          "url": "https://connect.advancedcustomfields.com/index.php?a=download&p=pro&k={%ACF_PRO_KEY}&t={%version}"
         },
-        "wordpress-install-dir": "public/wordpress"
-    },
-    "repositories": [
-        {
-            "type": "composer",
-            "url": "https://wpackagist.org",
-            "only": [
-                "wpackagist-plugin/*",
-                "wpackagist-theme/*"
-            ]
+        "require": {
+          "composer/installers": "^1.4",
+          "ffraenz/private-composer-installer": "^4.0"
         }
-    ],
-    "scripts": {
-        "post-root-package-install": [
-            "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
-        ]
+      }
     }
+  ],
+  "scripts": {
+    "post-root-package-install": [
+      "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
+    ]
+  }
 }
