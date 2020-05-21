@@ -1,25 +1,31 @@
-# WordPlate
+# WordPlate Boilerplate
+The website is built with a mordern WP development stack (WordPlate).
 
-[![WordPlate](https://cloud.githubusercontent.com/assets/499192/24309675/09eec350-10cd-11e7-98f3-094003bc8e15.png)](https://wordplate.github.io)
+## Features
+- Sass for stylesheets
+- Modern JavaScript
+- Laravel Mix for compiling assets and concatenating and minifying files
+- Browsersync for synchronized browser testing
+- Blade as a templating engine
+- Bootstrap 4
 
-WordPlate is a modern WordPress stack which simplifies WordPress development.
+## Requirements
+Make sure all dependencies have been installed before moving on:
 
-```sh
-$ composer create-project wordplate/wordplate
-```
+- WordPress >= 5.4
+- PHP >= 7.2.0 (with php-mbstring enabled)
+- Composer
+- Node.js >= 8.0.0
+- Yarn
 
-[![Build Status](https://badgen.net/github/checks/wordplate/framework?label=build&icon=github)](https://github.com/wordplate/framework/actions)
-[![Monthly Downloads](https://badgen.net/packagist/dm/wordplate/framework)](https://packagist.org/packages/wordplate/framework/stats)
-[![Latest Version](https://badgen.net/packagist/v/wordplate/framework)](https://packagist.org/packages/wordplate/framework)
+## Theme setup
+Edit `public/theme/sitename/app/setup.php` to enable or disable theme features, setup navigation menus, post thumbnail sizes, and sidebars.
 
-## Documentation
-
-Visit the [official documentation](https://wordplate.github.io/) page if you want to dive right in and start building WordPress applications with WordPlate. The documentation is thorough, complete, and makes it a breeze to get started learning WordPlate.
-
-## Contributing
-
-Please review our [contribution guidelines](https://github.com/wordplate/framework/blob/master/CONTRIBUTING.md) before submitting a pull request.
-
-## License
-
-[MIT](LICENSE) © [Vincent Klaiber](https://doubledip.se)
+## Theme development
+- Setup vhost with a domain (for example: `sitename.test`)
+- Update `BROWSER_SYNC_HOST` to the same value with the domain above (`http://sitename.test`)
+- `composer install` - Install PHP packages
+- `npm install` - Install Node packages
+- `npm run watch` — Compile assets when file changes are made, start Browsersync session
+- `npm run dev` — Compile and optimize the files in your assets directory
+- `npm run prod` — Compile assets for production

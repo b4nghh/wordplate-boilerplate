@@ -5,6 +5,7 @@ require('laravel-mix-purgecss');
 require('laravel-mix-copy-watched');
 
 const theme = process.env.WP_THEME;
+const themePath = `public/themes/${theme}/assets`;
 
 mix.setResourceRoot('../');
 mix.setPublicPath(`public/themes/${theme}/assets`);
@@ -19,8 +20,8 @@ mix.js('resources/assets/scripts/app.js', 'scripts')
     whitelistPatterns: require('purgecss-with-wordpress').whitelistPatterns,
    });
 
-mix.copyWatched('resources/assets/images/**', 'dist/images')
-  .copyWatched('resources/assets/fonts/**', 'dist/fonts');
+mix.copyWatched('resources/assets/images/**', themePath + '/images')
+  .copyWatched('resources/assets/fonts/**', themePath + '/fonts');
 
 mix.autoload({
   jquery: ['$', 'window.jQuery'],
