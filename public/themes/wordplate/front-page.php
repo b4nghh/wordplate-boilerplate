@@ -1,0 +1,3 @@
+<?php
+
+blade('front-page');
