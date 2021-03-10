@@ -58,8 +58,7 @@
           "url": "https://connect.advancedcustomfields.com/index.php?a=download&p=pro&k={%ACF_PRO_KEY}&t={%version}"
         },
         "require": {
-          "composer/installers": "^1.4",
-          "ffraenz/private-composer-installer": "^4.0"
+          "ffraenz/private-composer-installer": "^5.0"
         }
       }
     }
