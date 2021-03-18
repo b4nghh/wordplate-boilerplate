@@ -11,7 +11,7 @@
     "php": "^7.2",
     "advanced-custom-fields/advanced-custom-fields-pro": "^5.0.0",
     "fiskhandlarn/blade": "^0.6",
-    "laravel/helpers": "^1.2",
+    "laravel/helpers": "^1.4.1",
     "pixelstudio/wp-sync-db": "^1.7",
     "roots/soil": "^4.0",
     "tightenco/collect": "^7.10",
